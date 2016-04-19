@@ -1,0 +1,19 @@
+body{
+  background-color: #b3d9ff;
+}
+
+
+#data {
+  font: verdana;
+  color: #009900;
+}
+
+#text {
+  font:georgia;
+  color:navy;
+}
+
+.highlight {
+  font-family: 'Chewy':cursive;
+  color:#6600ff;
+}
