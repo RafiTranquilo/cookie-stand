@@ -18,32 +18,36 @@ var pike = {
   },
 
   cookiesPurchasedEachHour: function(){
-    for (i = 0; i < 14; i++) {
+    for (i = 0; i < storeHours.length; i++) {
       var cookiesPurchasedPerHourDaily = this.cookiesPurchasedPerHour();
       console.log(cookiesPurchasedPerHourDaily);
-      this.cookiesArray.push(cookiesPurchasedPerHourDaily);
-      this.dailyTotals += this.cookiesArray[i];
+      this.cookiesArray.push([storeHours[i], cookiesPurchasedPerHourDaily]);
+      console.log(this.cookiesArray);
+      this.dailyTotals += this.cookiesArray[i][1];
+    }
+    this.cookiesArray.push(['totals', this.dailyTotals]);
+
+    for(var f = 0; f < this.cookiesArray.length; f++){
+      this.cookiesArray[f] = this.cookiesArray[f][0] + ': ' + this.cookiesArray[f][1] + ' cookies!';
     }
   },
 
   renderData: function(){
-    var storeList = document.createElement('li');
+    this.cookiesPurchasedEachHour();
+    for (var i = 0; i < this.cookiesArray.length; i++) {
+      var HourlyLiEl = document.createElement('li');
+      var UlEl = document.getElementById('pike-store');
+      HourlyLiEl.textContent = this.cookiesArray[i];
+      UlEl.appendChild(HourlyLiEl);
+    }
   }
 };
-
-for(var i = 0; i < 15; i++) {
-  var time = document.createElement('li');
-  var pikeText = document.createTextNode(storeHours[i] + ' - ' + pike.cookiesArray[i]);
-  // time.textContent = storeHours[i] + ' - ' + pike.cookiesArray[i];
-  // document.getElementById('pikeStore');
-  // pikeText.appendChild(time);
-}
 
 var seaTac = {
   custMin:6,
   custMax:24,
   cookiesPerCustomer:1.2,
-  storeName: 'SeaTac Airport',
+  storeName: 'SeaTac',
   cookiesArray:[],
   dailyTotals:0,
 
@@ -57,32 +61,35 @@ var seaTac = {
   },
 
   cookiesPurchasedEachHour: function(){
-    for (i = 0; i < 14; i++) {
+    for (i = 0; i < storeHours.length; i++) {
       var cookiesPurchasedPerHourDaily = this.cookiesPurchasedPerHour();
       console.log(cookiesPurchasedPerHourDaily);
-      this.cookiesArray.push(cookiesPurchasedPerHourDaily);
-      this.dailyTotals += this.cookiesArray[i];
+      this.cookiesArray.push([storeHours[i], cookiesPurchasedPerHourDaily]);
+      console.log(this.cookiesArray);
+      this.dailyTotals += this.cookiesArray[i][1];
+    }
+    this.cookiesArray.push(['totals', this.dailyTotals]);
+
+    for(var f = 0; f < this.cookiesArray.length; f++){
+      this.cookiesArray[f] = this.cookiesArray[f][0] + ': ' + this.cookiesArray[f][1] + ' cookies!';
     }
   },
 
   renderData: function(){
-    var storeList = document.createElement('li');
+    this.cookiesPurchasedEachHour();
+    for (var i = 0; i < this.cookiesArray.length; i++) {
+      var HourlyLiEl = document.createElement('li');
+      var UlEl = document.getElementById('seatac-store');
+      HourlyLiEl.textContent = this.cookiesArray[i];
+      UlEl.appendChild(HourlyLiEl);
+    }
   }
 };
-
-for(var i = 0; i < 15; i++) {
-  var time = document.createElement('li');
-  var seaTacText = document.createTextNode(storeHours[i] + ' - ' + seaTac.cookiesArray[i]);
-  // time.textContent = storeHours[i] + ' - ' + pike.cookiesArray[i];
-  // document.getElementById('pikeStore');
-  // seaTacText.appendChild(time);
-}
-
 var southCenter = {
   custMin:11,
   custMax:38,
   cookiesPerCustomer:1.9,
-  storeName: 'Southcenter',
+  storeName: 'South Center',
   cookiesArray:[],
   dailyTotals:0,
 
@@ -96,28 +103,32 @@ var southCenter = {
   },
 
   cookiesPurchasedEachHour: function(){
-    for (i = 0; i < 14; i++) {
+    for (i = 0; i < storeHours.length; i++) {
       var cookiesPurchasedPerHourDaily = this.cookiesPurchasedPerHour();
       console.log(cookiesPurchasedPerHourDaily);
-      this.cookiesArray.push(cookiesPurchasedPerHourDaily);
-      this.dailyTotals += this.cookiesArray[i];
+      this.cookiesArray.push([storeHours[i], cookiesPurchasedPerHourDaily]);
+      console.log(this.cookiesArray);
+      this.dailyTotals += this.cookiesArray[i][1];
+    }
+    this.cookiesArray.push(['totals', this.dailyTotals]);
+
+    for(var f = 0; f < this.cookiesArray.length; f++){
+      this.cookiesArray[f] = this.cookiesArray[f][0] + ': ' + this.cookiesArray[f][1] + ' cookies!';
     }
   },
 
   renderData: function(){
-    var storeList = document.createElement('li');
+    this.cookiesPurchasedEachHour();
+    for (var i = 0; i < this.cookiesArray.length; i++) {
+      var HourlyLiEl = document.createElement('li');
+      var UlEl = document.getElementById('south-center-store');
+      HourlyLiEl.textContent = this.cookiesArray[i];
+      UlEl.appendChild(HourlyLiEl);
+    }
   }
 };
 
-for(var i = 0; i < 15; i++) {
-  var time = document.createElement('li');
-  var southText = document.createTextNode(storeHours[i] + ' - ' + southCenter.cookiesArray[i]);
-  // time.textContent = storeHours[i] + ' - ' + pike.cookiesArray[i];
-  // document.getElementById('pikeStore');
-  // southText.appendChild(time);
-}
-
-var bellevue = {
+var bellevueSquare = {
   custMin:20,
   custMax:48,
   cookiesPerCustomer:3.3,
@@ -135,27 +146,30 @@ var bellevue = {
   },
 
   cookiesPurchasedEachHour: function(){
-    for (i = 0; i < 14; i++) {
+    for (i = 0; i < storeHours.length; i++) {
       var cookiesPurchasedPerHourDaily = this.cookiesPurchasedPerHour();
       console.log(cookiesPurchasedPerHourDaily);
-      this.cookiesArray.push(cookiesPurchasedPerHourDaily);
-      this.dailyTotals += this.cookiesArray[i];
+      this.cookiesArray.push([storeHours[i], cookiesPurchasedPerHourDaily]);
+      console.log(this.cookiesArray);
+      this.dailyTotals += this.cookiesArray[i][1];
+    }
+    this.cookiesArray.push(['totals', this.dailyTotals]);
+
+    for(var f = 0; f < this.cookiesArray.length; f++){
+      this.cookiesArray[f] = this.cookiesArray[f][0] + ': ' + this.cookiesArray[f][1] + ' cookies!';
     }
   },
 
   renderData: function(){
-    var storeList = document.createElement('li');
+    this.cookiesPurchasedEachHour();
+    for (var i = 0; i < this.cookiesArray.length; i++) {
+      var HourlyLiEl = document.createElement('li');
+      var UlEl = document.getElementById('bellevue-store');
+      HourlyLiEl.textContent = this.cookiesArray[i];
+      UlEl.appendChild(HourlyLiEl);
+    }
   }
 };
-
-for(var i = 0; i < 15; i++) {
-  var time = document.createElement('li');
-  var belleText = document.createTextNode(storeHours[i] + ' - ' + bellevue.cookiesArray[i]);
-  // time.textContent = storeHours[i] + ' - ' + pike.cookiesArray[i];
-  // document.getElementById('pikeStore');
-  // belleText.appendChild(time);
-}
-
 var alki = {
   custMin:3,
   custMax:24,
@@ -174,23 +188,33 @@ var alki = {
   },
 
   cookiesPurchasedEachHour: function(){
-    for (i = 0; i < 14; i++) {
+    for (i = 0; i < storeHours.length; i++) {
       var cookiesPurchasedPerHourDaily = this.cookiesPurchasedPerHour();
       console.log(cookiesPurchasedPerHourDaily);
-      this.cookiesArray.push(cookiesPurchasedPerHourDaily);
-      this.dailyTotals += this.cookiesArray[i];
+      this.cookiesArray.push([storeHours[i], cookiesPurchasedPerHourDaily]);
+      console.log(this.cookiesArray);
+      this.dailyTotals += this.cookiesArray[i][1];
+    }
+    this.cookiesArray.push(['totals', this.dailyTotals]);
+
+    for(var f = 0; f < this.cookiesArray.length; f++){
+      this.cookiesArray[f] = this.cookiesArray[f][0] + ': ' + this.cookiesArray[f][1] + ' cookies!';
     }
   },
 
   renderData: function(){
-    var storeList = document.createElement('li');
+    this.cookiesPurchasedEachHour();
+    for (var i = 0; i < this.cookiesArray.length; i++) {
+      var HourlyLiEl = document.createElement('li');
+      var UlEl = document.getElementById('alki-store');
+      HourlyLiEl.textContent = this.cookiesArray[i];
+      UlEl.appendChild(HourlyLiEl);
+    }
   }
 };
 
-for(var i = 0; i < 15; i++) {
-  var time = document.createElement('li');
-  var alkiText = document.createTextNode(storeHours[i] + ' - ' + alki.cookiesArray[i]);
-  // time.textContent = storeHours[i] + ' - ' + pike.cookiesArray[i];
-  // document.getElementById('pikeStore');
-  // alkiText.appendChild(time);
-}
+pike.renderData();
+seaTac.renderData();
+southCenter.renderData();
+bellevueSquare.renderData();
+alki.renderData();
