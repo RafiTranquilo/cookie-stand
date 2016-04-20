@@ -4,7 +4,7 @@
 <head></head>
 
 <body>
-<h1>This is a great heading</h1>
+<h1>Salmon Cookie Bonanza</h1>
 
 <table>
   <thead id='store-hours'>
@@ -13,40 +13,24 @@
   </tbody>
 </table>
 
-<!-- <table>
-  <thead>
-  </thead>
-  <tbody id="seatac-store">
-  </tbody>
-</table>
+<form id="newStore">
+  <fieldset>
 
-<table>
-  <thead>
-  </thead>
-  <tbody id="south-center-store">
-  </tbody>
-</table>
+    <label for="storeLabel">Store Name</label>
+    <input name="storeLabel" type="text" required />
 
-<table>
-  <thead id='append-head'>
-  </thead>
-  <tbody id="bellevue-store">
-  </tbody>
-</table>
+    <label for="minCust">Minimun Number of Customers</label>
+    <input name="minCust" type="number" required />
 
-<table>
-  <thead>
-  </thead>
-  <tbody id="alki-store">
-  </tbody>
-</table> -->
+    <label for="maxCust">Max Number of Customers</label>
+    <input name="maxCust" type="number" required />
 
+    <label for="aveCookies">Average Cookies Purchased</label>
+    <input name="aveCookies" type="number" required />
 
-<!-- <table id = "pike-store"></>
-<ul id = "seatac-store"></ul>
-<ul id = "south-center-store"></ul>
-<ul id = "bellevue-store"></ul>
-<ul id = "alki-store"></ul> -->
+    <button id="add-new-store" type="submit">Create New Store</button>
+  </fieldset>
+</form>
 
 <script src = "pikes.js"></script>
 
