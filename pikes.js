@@ -77,3 +77,25 @@ function doStuff(array) {
     array[i].makeStoreRows();
   }
 }
+
+function handleStoreEdition(event) {
+  console.log(event);
+  event.preventDefault();
+
+  var location = event.target.storeLabel.value;
+  var min = event.target.minCust.value;
+  var max = event.target.maxCust.value;
+  var ave = event.target.aveCookies.value;
+  var newLocation = new StoreList(location, min, max, ave);
+
+  event.target.storeLabel.value = null;
+  event.target.minCust.value = null;
+  event.target.maxCust.value = null;
+  event.target.aveCookies.value = null;
+
+  newStoreArray.push(newLocation);
+  doStuff(newStoreArray);
+  newStoreArray = [];
+}
+
+newStore.addEventListener('submit', handleStoreEdition);
