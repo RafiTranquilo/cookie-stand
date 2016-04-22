@@ -1,0 +1,13 @@
+body{
+  background-color: salmon;
+}
+
+.table{
+  border-style: solid;
+  border-color: navy;
+  border-radius:15px;
+}
+
+#store-hours{
+  border-style:solid;
+}
