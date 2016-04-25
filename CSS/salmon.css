@@ -1,66 +1,40 @@
 body{
   background-color: #b3d9ff;
-  border:0;
-  margin:0;
-  display:block;;
-}
-.container{
-  display:block;
-  border:none;
-  margin:0;
-  max-width:960px;
+  display:flex;
+  flex-direction: column;
+  width: 600px;
+  margin:0 auto;
+
 }
 
-.top{
-  position:fixed;
+.header{
   background-color: white;
-  margin-left:0;
-  padding:0;
-  width:100%;
-  display:block;
-  z-index: 10;
+  display: inline-flex;
+  font-family: 'Chewy';
+  font-size: 24px;
 
 }
-.splash{
-  display:block;
-  /*position: relative;
-  top: 174px;*/
-}
-
-.mainContent{
-  display:block;
-  border:solid;
-
-}
-.boxOne{
-  position:relative;
-  left:25px;
-}
-
-.lilFish{
-  width:200px;
-  max-height:150px;
-}
-
-.buttonHead{
-  margin:20px;
-  margin-right: 5px;
-  margin-top:5px;
+.buttons{
+  display: inline-flex;
+  max-height: 20px;
+  /*margin: 0 auto;*/
+  margin-top: 100px;
 
 }
 
-#data {
-  font: verdana;
-  color: #009900;
+.family{
+  max-width: 600px;
 }
 
-.creepyFam{
-  width:1194px;
-  opacity: .7;
-
+h1{
+  width: 160px;
 }
 
-.cookies{
-  display:inline;
-
+.content{
+  margin:20px auto;
+  align-content: center;
+  border-style: solid;
+  border-color: #006600;
+  border-width: 2px;
+  border-radius: 5px;
 }
